@@ -3,8 +3,8 @@ public class Main {
 
         // Part 1
         System.out.println("Задание 1");
-        boolean clientOS = true;
-        if (clientOS) {
+        byte clientOS = 1;
+        if (clientOS == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.println("Установите версию приложения для iOS по ссылке");
@@ -13,18 +13,19 @@ public class Main {
 
         // Part 2
         System.out.println("Задание 2");
-        int yearOfIssue = 2012;
-        clientOS = false;
-        if (yearOfIssue >= 2015) {
-            if (clientOS) {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS) {
-            System.out.println("Установите упрощённую версию приложения для Android по ссылке");
-        } else {
+        int yearOfIssue = 2015;
+        clientOS = 0;
+        if ((yearOfIssue >= 2015) && (clientOS == 0)) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+        if ((yearOfIssue >= 2015) && (clientOS == 1)) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        }
+        if ((yearOfIssue < 2015) && (clientOS == 0)) {
             System.out.println("Установите упрощённую версию приложения для iOS по ссылке");
+        }
+        if ((yearOfIssue < 2015) && (clientOS == 1)) {
+            System.out.println("Установите упрощённую версию приложения для Android по ссылке");
         }
         System.out.println();
 
@@ -71,14 +72,23 @@ public class Main {
 
         // Part 5
         System.out.println("Задание 5");
-        int monthNumber=12;
+        int monthNumber = 12;
         String season;
         switch (monthNumber) {
-            case 1, 2, 12: season = "Зима"; break;
-            case 3, 4, 5: season = "Весна"; break;
-            case 6, 7, 8: season = "Лето"; break;
-            case 9, 10, 11: season = "Осень"; break;
-            default: season = "Вне сезона";
+            case 1, 2, 12:
+                season = "Зима";
+                break;
+            case 3, 4, 5:
+                season = "Весна";
+                break;
+            case 6, 7, 8:
+                season = "Лето";
+                break;
+            case 9, 10, 11:
+                season = "Осень";
+                break;
+            default:
+                season = "Вне сезона";
         }
         System.out.println(season);
         System.out.println();
